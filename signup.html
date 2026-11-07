@@ -108,18 +108,26 @@ a {
 
     <h2>Create Student Account</h2>
 
-    <form>
-        <label>Full Name</label>
-        <input type="text" placeholder="Enter your name" required>
+    <form id="signupForm">
 
-        <label>Email Address</label>
-        <input type="email" placeholder="Enter your email" required>
+    <label>Full Name</label>
+    <input type="text" id="studentName"
+           placeholder="Enter your name" required>
 
-        <label>Password</label>
-        <input type="password" placeholder="Create a password" required>
+    <label>Email Address</label>
+    <input type="email" id="email"
+           placeholder="Enter your email" required>
 
-        <button type="button">Create Account</button>
-    </form>
+    <label>Password</label>
+    <input type="password" id="password"
+           placeholder="Create a password"
+           minlength="6" required>
+
+    <button type="submit">Create Account</button>
+
+    <p id="message"></p>
+
+</form>
 
     <div class="footer">
         Start Your Learning Journey Today
@@ -129,6 +137,43 @@ a {
     <a href="index.html">← Back to Home</a>
 
 </div>
+<script type="module">
+import { auth } from "./firebase.js";
 
+import {
+    createUserWithEmailAndPassword,
+    updateProfile
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+
+const form = document.getElementById("signupForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("studentName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    message.textContent = "Creating your account...";
+
+    try {
+        const result = await createUserWithEmailAndPassword(
+            auth, email, password
+        );
+
+        await updateProfile(result.user, {
+            displayName: name
+        });
+
+        message.textContent = "Account created successfully!";
+
+        window.location.href = "dashboard.html";
+
+    } catch (error) {
+        message.textContent = error.message;
+    }
+});
+</script>
 </body>
 </html>

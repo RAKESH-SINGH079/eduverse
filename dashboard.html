@@ -150,7 +150,7 @@ footer {
     <div class="logo">EDUVERSE</div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="login.html">Logout</a>
+        <a href="#" id="logoutLink">Logout</a>
     </nav>
 </header>
 
@@ -181,9 +181,9 @@ footer {
         </div>
 
         <div class="card">
-            <h3>Learning Progress</h3>
-            <div class="number">0%</div>
-        </div>
+    <h3>Quiz Scores</h3>
+    <div class="number" id="quizScore">0 / 5</div>
+</div>
     </section>
 
     <h2 class="section-title">My Courses</h2>
@@ -236,5 +236,44 @@ footer {
     © 2026 EDUVERSE | Learn Without Limits
 </footer>
 
+  <script>
+const score = localStorage.getItem("computerFundamentalsScore");
+const total = localStorage.getItem("computerFundamentalsTotal");
+
+if (score !== null && total !== null) {
+    document.getElementById("quizScore").textContent =
+        score + " / " + total;
+}
+</script>
+
+<script type="module">
+import { auth } from "./firebase.js";
+
+import {
+    signOut,
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+
+// Check whether student is logged in
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.href = "login.html";
+    } else {
+        const heading = document.querySelector(".welcome h1");
+        if (heading) {
+            heading.textContent =
+                "Welcome, " + (user.displayName || "Student") + "!";
+        }
+    }
+});
+
+// Logout
+document.getElementById("logoutLink").addEventListener("click", async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    window.location.href = "login.html";
+});
+</script>
+  
 </body>
 </html>
