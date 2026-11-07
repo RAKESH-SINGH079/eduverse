@@ -140,9 +140,9 @@ button {
 import { auth } from "./firebase.js";
 
 import {
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    signOut
 } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
-
 const form = document.getElementById("loginForm");
 const message = document.getElementById("message");
 
@@ -155,9 +155,20 @@ form.addEventListener("submit", async (e) => {
     message.textContent = "Signing in...";
 
     try {
-        await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = "dashboard.html";
-    } catch (error) {
+    const result = await signInWithEmailAndPassword(
+        auth, email, password
+    );
+
+    if (!result.user.emailVerified) {
+        await signOut(auth);
+        message.textContent =
+            "Please verify your email before signing in.";
+        return;
+    }
+
+    window.location.href = "dashboard.html";
+
+} catch (error) {
         message.textContent = "Login failed. Check your email and password.";
     }
 });

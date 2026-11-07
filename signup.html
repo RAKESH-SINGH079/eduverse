@@ -142,9 +142,9 @@ import { auth } from "./firebase.js";
 
 import {
     createUserWithEmailAndPassword,
-    updateProfile
+    updateProfile,
+    sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
-
 const form = document.getElementById("signupForm");
 const message = document.getElementById("message");
 
@@ -163,12 +163,15 @@ form.addEventListener("submit", async (e) => {
         );
 
         await updateProfile(result.user, {
-            displayName: name
-        });
+    displayName: name
+});
 
-        message.textContent = "Account created successfully!";
+await sendEmailVerification(result.user);
 
-        window.location.href = "dashboard.html";
+message.textContent =
+    "Account created! Please check your email and verify it before continuing.";
+
+window.location.href = "login.html";
 
     } catch (error) {
         message.textContent = error.message;
