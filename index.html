@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDUVERSE - Learn Without Limits</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 35px 4%;
+    background: linear-gradient(135deg, #e77bdc, #a78bfa, #83a7ff);
+    color: white;
+}
+
+.main-panel {
+    max-width: 1250px;
+    min-height: 650px;
+    margin: auto;
+    padding: 25px 5%;
+    border: 2px solid rgba(255,255,255,0.65);
+    border-radius: 25px;
+    background: rgba(12, 17, 34, 0.88);
+    box-shadow: 0 20px 70px rgba(30,20,70,0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.logo span {
+    color: #bd83ff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #c5c7d8;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d49aff;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    font-size: 12px;
+    padding: 10px 17px;
+    border-radius: 25px;
+    color: white;
+    border: 1px solid #8171bb;
+}
+
+.nav-buttons .create {
+    background: linear-gradient(90deg,#9b5cf6,#d15be9);
+    border: none;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 30px;
+    padding: 75px 0 55px;
+}
+
+.tag {
+    color: #bd8aff;
+    font-size: 13px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #c38cff;
+}
+
+.hero p {
+    color: #b9bdcf;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 450px;
+}
+
+.actions {
+    display: flex;
+    gap: 13px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 13px 21px;
+    border-radius: 25px;
+    font-size: 13px;
+    color: white;
+    background: linear-gradient(90deg,#9857f5,#d05de9);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #8171bb;
+}
+
+.visual {
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-main {
+    width: 57%;
+    height: 265px;
+    object-fit: cover;
+    border-radius: 22px;
+    position: absolute;
+    right: 2%;
+    top: 15px;
+    border: 2px solid rgba(255,255,255,0.35);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.student-small {
+    width: 48%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 3px solid rgba(255,255,255,0.35);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.student-label {
+    position: absolute;
+    left: 3%;
+    bottom: -48px;
+    background: rgba(95,75,140,0.8);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 11px;
+    color: #e5dcff;
+}
+
+.stats {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.stat {
+    color: #bfc3d3;
+    font-size: 11px;
+}
+
+.stat strong {
+    display: block;
+    color: white;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.trusted {
+    text-align: center;
+    margin-top: 55px;
+    padding-bottom: 20px;
+}
+
+.trusted h2 {
+    font-size: 23px;
+    margin-bottom: 28px;
+}
+
+.trusted h2 span {
+    color: #d09aff;
+}
+
+.subjects {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #c9c9d7;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.subjects span {
+    padding: 8px;
+}
+
+.course-section {
+    margin-top: 55px;
+    padding: 35px 0;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.course-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 22px;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    border-color: #c38cff;
+    background: rgba(160,100,255,0.15);
+}
+
+.course-card .icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #b9bdcf;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.course-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #d09aff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+@media(max-width: 850px) {
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 480px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
+  
+@media(max-width: 850px) {
+    body {
+        padding: 18px 3%;
+    }
+
+    .main-panel {
+        padding: 22px 5%;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 13px;
+        margin: 12px 0;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 45px 0 35px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .actions, .stats {
+        justify-content: center;
+    }
+
+    .visual {
+        min-height: 300px;
+        max-width: 480px;
+        width: 100%;
+        margin: 20px auto 35px;
+    }
+
+    .trusted {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 420px) {
+    .logo {
+        font-size: 21px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .visual {
+        min-height: 240px;
+    }
+
+    .student-main {
+        height: 210px;
+    }
+
+    .student-small {
+        height: 150px;
+    }
+
+    .stats {
+        gap: 18px;
+    }
+
+    .trusted h2 {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-panel">
+
+<header>
+    <div class="logo">✦ EDU<span>VERSE</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="#contact">Sign In</a>
+        <a href="#contact" class="create">Create Account</a>
+    </div>
+</header>
+
+<section class="hero" id="home">
+
+    <div>
+        <div class="tag">✦ THE GLOBAL LEARNING PLATFORM</div>
+
+        <h1>
+            Empower Your Learning
+            Journey With <span>EDUVERSE</span>
+        </h1>
+
+        <p>
+            Discover new knowledge, develop essential skills
+            and explore your potential. Your learning journey
+            starts here, without limits.
+        </p>
+
+        <div class="actions">
+            <a href="#courses" class="btn">Join Now ✦</a>
+            <a href="#courses" class="btn btn-outline">Explore Courses</a>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <strong>250+</strong>
+                Learning Topics
+            </div>
+
+            <div class="stat">
+                <strong>24/7</strong>
+                Learn Anytime
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                Possibilities
+            </div>
+        </div>
+    </div>
+
+    <div class="visual">
+        <img
+        class="student-main"
+        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700"
+        alt="Student portrait">
+
+        <img
+        class="student-small"
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
+        alt="Student portrait">
+
+        <div class="student-label">
+            ✦ Learn • Grow • Succeed
+        </div>
+    </div>
+
+</section>
+
+
+<section class="course-section" id="courses">
+
+    <h2 style="text-align:center; font-size:28px; margin-bottom:12px;">
+        Explore Our <span style="color:#d09aff;">Courses</span>
+    </h2>
+
+    <p style="text-align:center; color:#b9bdcf; margin-bottom:30px;">
+        Discover knowledge. Develop skills. Build your future.
+    </p>
+
+    <div class="course-grid">
+
+        <div class="course-card">
+            <div class="icon">💻</div>
+            <h3>Computer Science</h3>
+            <p>Explore programming, Python, AI and modern technology.</p>
+          <a href="computer-science.html">Explore Course →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="icon">🔬</div>
+            <h3>Physics</h3>
+            <p>Understand the universe through scientific concepts.</p>
+            <a href="physics.html">Explore Course →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="icon">🧪</div>
+            <h3>Chemistry</h3>
+            <p>Discover atoms, molecules and chemical reactions.</p>
+            <a href="chemistry.html">Explore Course →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>Build logical thinking and mathematical skills.</p>
+            <a href="mathematics.html">Explore Course →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="icon">🌍</div>
+            <h3>Languages</h3>
+            <p>Improve communication and language skills.</p>
+            <a hre<a href="languages.html">Explore Course →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="icon">🧠</div>
+            <h3>General Knowledge</h3>
+            <p>Expand your knowledge about the world.</p>
+            <a href="general-knowledge.html">Explore Course →</a>
+        </div>
+
+    </div>
+</section>
+
+    <h2>Explore a World of <span>Knowledge</span></h2>
+
+    <div class="subjects">
+        <span>✦ TECHNOLOGY</span>
+        <span>◈ SCIENCE</span>
+        <span>✧ MATHEMATICS</span>
+        <span>◎ LANGUAGES</span>
+        <span>✦ CREATIVITY</span>
+    </div>
+</section>
+
+</div>
+
+</body>
+</html>

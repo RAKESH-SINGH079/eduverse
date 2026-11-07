@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Fundamentals | EDUVERSE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#e7b5ff,#8db5ff,#d6c4ff);color:white;padding:20px}
+.container{max-width:1100px;margin:auto;background:#15152c;border-radius:25px;padding:30px;box-shadow:0 15px 40px #3335}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;border-bottom:1px solid #ffffff25;padding-bottom:20px}
+.logo{font-size:25px;font-weight:bold;color:#bda5ff}
+header a{color:white;text-decoration:none}
+.hero{padding:40px 0 25px}
+.tag{color:#c7aaff;font-size:13px;letter-spacing:2px}
+h1{font-size:36px;margin:15px 0}
+.hero p,.lesson p{color:#c6c6d9;line-height:1.8}
+.lesson{background:#22223d;border:1px solid #ffffff15;border-radius:18px;padding:25px;margin-top:20px}
+h2{color:#c5a8ff;margin-bottom:15px}
+h3{margin:20px 0 10px}
+.example{background:#303052;padding:18px;border-radius:12px;margin-top:15px;line-height:1.8}
+ul{padding-left:22px;color:#c6c6d9;line-height:2}
+button{background:linear-gradient(90deg,#9c70ff,#5c91ff);color:white;border:none;border-radius:10px;padding:13px 18px;font-size:15px;margin-top:12px;cursor:pointer}
+button:disabled{opacity:.6}
+#options button{display:block;width:100%;text-align:left;margin:8px 0}
+footer{text-align:center;color:#aaaac5;margin-top:35px;font-size:13px}
+@media(max-width:600px){body{padding:10px}.container{padding:20px}h1{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<div class="logo">EDUVERSE</div>
+<a href="computer-science.html">← Back to Course</a>
+</header>
+
+<section class="hero">
+<div class="tag">COMPUTER SCIENCE • MODULE 01</div>
+<h1>Computer Fundamentals</h1>
+<p>Understand the basics of computers, their components and how they work.</p>
+</section>
+
+<section class="lesson">
+<h2>Lesson 1: Introduction to Computer</h2>
+<h3>What is a Computer?</h3>
+<p>A computer is an electronic device that accepts data, processes it according to instructions, stores it and produces meaningful information.</p>
+<h3>हिंदी में समझें</h3>
+<p>कंप्यूटर एक इलेक्ट्रॉनिक उपकरण है जो डेटा प्राप्त करता है, निर्देशों के अनुसार उसे प्रोसेस करता है और उपयोगी जानकारी देता है।</p>
+<div class="example"><strong>Example:</strong><p>When you calculate 10 + 20, the computer processes the numbers and displays 30.</p></div>
+</section>
+
+<section class="lesson">
+<h2>Main Characteristics of Computer</h2>
+<ul>
+<li><strong>Speed:</strong> Performs tasks quickly.</li>
+<li><strong>Accuracy:</strong> Gives correct results when instructions are correct.</li>
+<li><strong>Storage:</strong> Stores large amounts of data.</li>
+<li><strong>Diligence:</strong> Can repeat tasks without getting tired.</li>
+<li><strong>Versatility:</strong> Performs different types of tasks.</li>
+</ul>
+</section>
+
+<section class="lesson">
+<h2>Basic Working of a Computer</h2>
+<div class="example">
+<strong>Input → Processing → Output</strong>
+<p>Input: डेटा देना</p>
+<p>Processing: डेटा पर काम करना</p>
+<p>Output: परिणाम प्राप्त करना</p>
+</div>
+</section>
+
+<section class="lesson" id="notes">
+<h2>📘 Important Notes</h2>
+<h3>1. Hardware</h3>
+<p>Physical parts of a computer that we can touch are called hardware.</p>
+<p><strong>हिंदी:</strong> कंप्यूटर के वे भाग जिन्हें हम छू सकते हैं, हार्डवेयर कहलाते हैं।</p>
+<div class="example">Examples: Keyboard, Mouse, Monitor, CPU.</div>
+
+<h3>2. Software</h3>
+<p>A set of programs or instructions that tells a computer what to do is called software.</p>
+<p><strong>हिंदी:</strong> प्रोग्राम या निर्देशों के समूह को सॉफ्टवेयर कहते हैं।</p>
+<div class="example">Examples: Windows, Linux, MS Word.</div>
+
+<h3>3. CPU</h3>
+<p>CPU stands for Central Processing Unit. It performs important processing tasks.</p>
+<p><strong>हिंदी:</strong> CPU का पूरा नाम सेंट्रल प्रोसेसिंग यूनिट है।</p>
+
+<h3>4. Input Devices</h3>
+<p>Devices used to enter data into a computer are called input devices.</p>
+<div class="example">Examples: Keyboard, Mouse, Scanner, Microphone.</div>
+
+<h3>5. Output Devices</h3>
+<p>Devices that display or produce processed results are called output devices.</p>
+<div class="example">Examples: Monitor, Printer, Speaker.</div>
+</section>
+
+<section class="lesson" id="progress">
+<h2>📊 Your Learning Progress</h2>
+<p id="progressText">Lesson not completed yet.</p>
+<div style="background:#444466;height:14px;border-radius:20px;overflow:hidden;margin-top:15px">
+<div id="progressBar" style="width:0%;height:100%;background:linear-gradient(90deg,#9c70ff,#5c91ff);transition:.4s"></div>
+</div>
+<button onclick="completeLesson()" id="completeBtn">✓ Mark as Completed</button>
+<p id="completionMessage"></p>
+</section>
+
+<section class="lesson" id="quiz">
+<h2>🧠 Practice Quiz</h2>
+<p>Test your Computer Fundamentals knowledge.</p>
+<div id="questionBox">
+<h3 id="question"></h3>
+<div id="options"></div>
+<p id="feedback"></p>
+<button onclick="nextQuestion()" id="nextBtn" style="display:none">Next Question →</button>
+</div>
+<h3 id="result"></h3>
+<button onclick="restartQuiz()" id="restartBtn" style="display:none">Try Again</button>
+</section>
+
+<footer>© 2026 EDUVERSE | Learn Without Limits.</footer>
+</div>
+
+<script>
+const questions=[
+{q:"1. What is a computer?",options:["Electronic Device","Furniture","Vehicle","Food"],answer:0},
+{q:"2. Which part is called the brain of a computer?",options:["Monitor","CPU","Keyboard","Mouse"],answer:1},
+{q:"3. Which device is used to enter data?",options:["Printer","Speaker","Keyboard","Monitor"],answer:2},
+{q:"4. What does CPU stand for?",options:["Central Processing Unit","Computer Personal Unit","Central Program Utility","Control Processing User"],answer:0},
+{q:"5. Which is an output device?",options:["Mouse","Keyboard","Scanner","Monitor"],answer:3}
+];
+
+let current=0;
+let score=0;
+let answered=false;
+
+function showQuestion(){
+answered=false;
+document.getElementById("question").textContent=questions[current].q;
+document.getElementById("options").innerHTML="";
+questions[current].options.forEach((option,index)=>{
+const btn=document.createElement("button");
+btn.textContent=option;
+btn.addEventListener("click", function() {
+    checkAnswer(index);
+});
+document.getElementById("options").appendChild(btn);
+});
+document.getElementById("feedback").textContent="";
+document.getElementById("nextBtn").style.display="none";
+}
+
+function checkAnswer(selected){
+if(answered)return;
+answered=true;
+const correct=questions[current].answer;
+if(selected===correct){
+score++;
+document.getElementById("feedback").textContent="✓ Correct Answer!";
+}else{
+document.getElementById("feedback").textContent="✗ Incorrect. Correct answer: "+questions[current].options[correct];
+}
+document.getElementById("nextBtn").style.display="inline-block";
+}
+
+function nextQuestion(){
+current++;
+if(current<questions.length){
+showQuestion();
+}else{
+document.getElementById("questionBox").style.display="none";
+document.getElementById("result").textContent="Your Score: "+score+" / "+questions.length;
+document.getElementById("restartBtn").style.display="inline-block";
+}
+}
+
+function restartQuiz(){
+current=0;
+score=0;
+document.getElementById("questionBox").style.display="block";
+document.getElementById("result").textContent="";
+document.getElementById("restartBtn").style.display="none";
+showQuestion();
+}
+
+function updateProgress(){
+const completed=localStorage.getItem("computerFundamentalsCompleted");
+if(completed==="true"){
+document.getElementById("progressBar").style.width="100%";
+document.getElementById("progressText").textContent="Progress: 100% Completed";
+document.getElementById("completionMessage").textContent="Congratulations! Lesson Completed.";
+document.getElementById("completeBtn").textContent="✓ Completed";
+document.getElementById("completeBtn").disabled=true;
+}
+}
+
+function completeLesson(){
+localStorage.setItem("computerFundamentalsCompleted","true");
+updateProgress();
+}
+
+showQuestion();
+updateProgress();
+</script>
+</body>
+</html>

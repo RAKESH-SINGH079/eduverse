@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Science | EDUVERSE</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#e77bdc,#a78bfa,#83a7ff);
+    min-height: 100vh;
+    padding: 25px 4%;
+    color: white;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    background: #11162c;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 22px;
+    padding: 30px 5%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #c38cff;
+}
+
+header a {
+    color: #d1c9e8;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.hero {
+    padding: 65px 0 40px;
+}
+
+.tag {
+    color: #c38cff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 17px;
+}
+
+h1 {
+    font-size: clamp(32px,5vw,48px);
+    margin-bottom: 17px;
+}
+
+.hero p {
+    color: #b9bdcf;
+    line-height: 1.8;
+    max-width: 600px;
+    font-size: 14px;
+}
+
+.info {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    color: #d4c9f2;
+    font-size: 13px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin: 35px 0 20px;
+}
+
+.modules {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.module {
+    background: #1d2441;
+    border: 1px solid #353b5d;
+    border-radius: 14px;
+    padding: 22px;
+    transition: .3s;
+}
+
+.module:hover {
+    border-color: #bb8aff;
+    transform: translateY(-4px);
+}
+
+.module .icon {
+    font-size: 28px;
+    margin-bottom: 13px;
+}
+
+.module h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.module p {
+    color: #b9bdcf;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.module a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #d09aff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.practice {
+    margin-top: 35px;
+    padding: 25px;
+    background: linear-gradient(120deg,#49317e,#27345e);
+    border-radius: 16px;
+}
+
+.practice h2 {
+    margin-bottom: 12px;
+}
+
+.practice p {
+    color: #ded7f4;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.practice a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: #bd83ff;
+    color: #17112c;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0 5px;
+    color: #9298b3;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 23px 5%;
+    }
+
+    .modules {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <div class="logo">✦ EDU<span>VERSE</span></div>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<section class="hero">
+    <div class="tag">YOUR LEARNING JOURNEY</div>
+
+    <h1>Computer Science 💻</h1>
+
+    <p>
+        Welcome to the world of technology and programming.
+        Explore computer fundamentals, learn Python,
+        understand artificial intelligence and develop
+        your problem-solving skills.
+    </p>
+
+    <div class="info">
+        <span>📚 6 Learning Modules</span>
+        <span>🎯 Beginner Friendly</span>
+        <span>🌐 EDUVERSE Learning</span>
+    </div>
+</section>
+
+<h2 class="section-title">Explore Learning Modules</h2>
+
+<section class="modules">
+
+    <div class="module">
+        <div class="icon">🖥️</div>
+        <h3>1. Computer Fundamentals</h3>
+        <p>Learn about computer systems, hardware, software and operating systems.</p>
+        <a href="computer-fundamentals.html">Explore Module →</a>
+    </div>
+
+    <div class="module">
+        <div class="icon">🐍</div>
+        <h3>2. Python Programming</h3>
+        <p>Start programming with Python, variables, operators and loops.</p>
+        <a href="#">Explore Module →</a>
+    </div>
+
+    <div class="module">
+        <div class="icon">🧩</div>
+        <h3>3. Problem Solving</h3>
+        <p>Understand algorithms, flowcharts and computational thinking.</p>
+        <a href="#">Explore Module →</a>
+    </div>
+
+    <div class="module">
+        <div class="icon">🤖</div>
+        <h3>4. Artificial Intelligence</h3>
+        <p>Discover AI, machine learning and intelligent technologies.</p>
+        <a href="#">Explore Module →</a>
+    </div>
+
+    <div class="module">
+        <div class="icon">🌐</div>
+        <h3>5. Internet & Networking</h3>
+        <p>Explore websites, networks, browsers and internet fundamentals.</p>
+        <a href="#">Explore Module →</a>
+    </div>
+
+    <div class="module">
+        <div class="icon">🔐</div>
+        <h3>6. Cyber Safety</h3>
+        <p>Learn about privacy, digital security and responsible technology use.</p>
+        <a href="#">Explore Module →</a>
+    </div>
+
+</section>
+
+<section class="practice">
+    <h2>Ready to Test Your Knowledge?</h2>
+    <p>
+        Practice what you learn and check your understanding
+        with interactive quizzes.
+    </p>
+    <a href="#">Coming Soon</a>
+</section>
+
+<footer>
+    © 2026 EDUVERSE. Learn Without Limits.
+</footer>
+
+</div>
+
+</body>
+</html>
