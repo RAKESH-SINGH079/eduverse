@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDUVERSE - Student Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f2ff;
+    color: #211747;
+}
+
+header {
+    background: linear-gradient(120deg, #24145c, #6545b8);
+    color: white;
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #7656d8, #a45ce0);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.welcome h1 {
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(40,20,90,0.07);
+}
+
+.card h3 {
+    color: #7656d8;
+    margin-bottom: 12px;
+}
+
+.number {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.section-title {
+    margin: 25px 0 17px;
+}
+
+.course {
+    margin-bottom: 15px;
+}
+
+.progress {
+    height: 10px;
+    background: #e7e1f8;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #7656d8, #ed69a9);
+}
+
+.course p {
+    color: #777;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 11px 20px;
+    border-radius: 9px;
+    background: #7656d8;
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header a {
+        margin: 0 7px;
+    }
+
+    .welcome {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">EDUVERSE</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="welcome">
+        <h1>Welcome, Student!</h1>
+        <p>Your learning journey continues here.</p>
+        <a href="index.html" class="button">Explore Courses</a>
+    </section>
+
+    <h2 class="section-title">Your Overview</h2>
+
+    <section class="stats">
+        <div class="card">
+            <h3>My Courses</h3>
+            <div class="number">6</div>
+        </div>
+
+        <div class="card">
+            <h3>Lessons Completed</h3>
+            <div class="number">0</div>
+        </div>
+
+        <div class="card">
+            <h3>Quiz Scores</h3>
+            <div class="number">0</div>
+        </div>
+
+        <div class="card">
+            <h3>Learning Progress</h3>
+            <div class="number">0%</div>
+        </div>
+    </section>
+
+    <h2 class="section-title">My Courses</h2>
+
+    <div class="card course">
+        <h3>Computer Science</h3>
+        <p>Start learning programming and computer concepts.</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <a href="computer-science.html" class="button">Continue Learning</a>
+    </div>
+
+    <div class="card course">
+        <h3>Physics</h3>
+        <p>Explore the laws of nature and the universe.</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <a href="physics.html" class="button">Continue Learning</a>
+    </div>
+
+    <div class="card course">
+        <h3>Chemistry</h3>
+        <p>Understand matter, atoms and chemical reactions.</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <a href="chemistry.html" class="button">Continue Learning</a>
+    </div>
+
+    <div class="card course">
+        <h3>Mathematics</h3>
+        <p>Improve your mathematical problem-solving skills.</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <a href="mathematics.html" class="button">Continue Learning</a>
+    </div>
+
+    <div class="card course">
+        <h3>Languages</h3>
+        <p>Improve your language and communication skills.</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <a href="languages.html" class="button">Continue Learning</a>
+    </div>
+
+    <div class="card course">
+        <h3>General Knowledge</h3>
+        <p>Expand your knowledge about the world.</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <a href="general-knowledge.html" class="button">Continue Learning</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 EDUVERSE | Learn Without Limits
+</footer>
+
+</body>
+</html>
