@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDUVERSE - Student Registration</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #171044, #5636a8, #1677a8);
+    color: white;
+}
+
+.signup-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 30px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 24px;
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.logo {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #ddd5ff;
+    margin: 10px 0 25px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 14px 0 7px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    font-size: 15px;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 23px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff65a3, #8b65ff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 22px;
+    color: #ddd5ff;
+    font-size: 14px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 17px;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="signup-box">
+
+    <div class="logo">EDUVERSE</div>
+    <p class="subtitle">Learn Without Limits</p>
+
+    <h2>Create Student Account</h2>
+
+    <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Create a password" required>
+
+        <button type="button">Create Account</button>
+    </form>
+
+    <div class="footer">
+        Start Your Learning Journey Today
+    </div>
+
+    <a href="login.html">Already have an account? Sign In</a>
+    <a href="index.html">← Back to Home</a>
+
+</div>
+
+</body>
+</html>

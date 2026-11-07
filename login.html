@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDUVERSE - Student Login</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #171044, #5636a8, #1677a8);
+    color: white;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 38px 30px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 24px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.logo {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #ddd5ff;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    outline: none;
+    font-size: 15px;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 24px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff65a3, #8b65ff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #ddd5ff;
+    font-size: 13px;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="logo">EDUVERSE</div>
+    <p class="subtitle">Learn Without Limits</p>
+
+    <h2>Student Login</h2>
+
+    <form>
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required>
+
+        <button type="button">Sign In</button>
+    </form>
+
+    <div class="footer">
+        Your Learning Journey Starts Here
+    </div>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
