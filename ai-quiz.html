@@ -61,6 +61,22 @@
             color: white;
             margin-top: 20px;
         }
+
+#quizArea {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 80px;
+}
+
+.quiz-status {
+    text-align: center;
+    color: #ffd166;
+    padding: 15px;
+}
+      
     </style>
 </head>
 
@@ -130,7 +146,7 @@
     <button onclick="startQuiz()">Generate AI Quiz</button>
 
     <p id="message" style="text-align:center;"></p>
-
+    <div id="quizArea"></div>
     <a href="index.html" class="back">← Back to EDUVERSE</a>
 
 </div>
