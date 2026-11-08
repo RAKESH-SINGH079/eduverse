@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUVERSE AI Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #17153b, #4b267d, #167c91);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 25px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 18px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd166;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 22px;
+            background: #ffd166;
+            color: #222;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌍 EDUVERSE AI QUIZ</h1>
+    <p style="text-align:center;">Learn Without Limits</p>
+
+    <label>Select Subject</label>
+    <select id="subject">
+        <option>Computer Science</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Mathematics</option>
+        <option>Languages</option>
+        <option>General Knowledge</option>
+    </select>
+
+    <label>Enter Chapter or Topic</label>
+    <input type="text" id="topic" placeholder="Enter chapter name">
+
+    <label>Select Language</label>
+    <input list="languages" id="language"
+           placeholder="Search or select language">
+
+    <datalist id="languages">
+        <option value="Hindi">
+        <option value="English">
+        <option value="Hinglish">
+        <option value="Sanskrit">
+        <option value="Bengali">
+        <option value="Tamil">
+        <option value="Telugu">
+        <option value="Marathi">
+        <option value="Gujarati">
+        <option value="Punjabi">
+        <option value="Urdu">
+        <option value="Nepali">
+        <option value="French">
+        <option value="German">
+        <option value="Spanish">
+        <option value="Arabic">
+        <option value="Chinese">
+        <option value="Japanese">
+        <option value="Korean">
+        <option value="Russian">
+        <option value="Portuguese">
+    </datalist>
+
+    <label>Select Difficulty</label>
+    <select id="difficulty">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+    </select>
+
+    <label>Number of Questions</label>
+    <select id="count">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+    </select>
+
+    <button onclick="startQuiz()">Generate AI Quiz</button>
+
+    <p id="message" style="text-align:center;"></p>
+
+    <a href="index.html" class="back">← Back to EDUVERSE</a>
+
+</div>
+
+<script>
+function startQuiz() {
+    const subject = document.getElementById("subject").value;
+    const topic = document.getElementById("topic").value.trim();
+    const language = document.getElementById("language").value.trim();
+    const difficulty = document.getElementById("difficulty").value;
+
+    if (!topic || !language) {
+        document.getElementById("message").textContent =
+            "Please enter a topic and select a language.";
+        return;
+    }
+
+    document.getElementById("message").textContent =
+        "Quiz settings saved! AI connection will be added next.";
+}
+</script>
+
+</body>
+</html>
